@@ -91,11 +91,12 @@ h2{font-size:clamp(40px,7vw,92px);margin-bottom:20px}
 .strip{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:48px;padding:28px 32px;border:2px solid var(--accent);border-radius:24px}
 .strip p{margin:0;font:800 clamp(22px,3vw,32px)/1.1 var(--head);letter-spacing:-.03em}
 .ai{background:var(--surface)}
-.stage{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.5fr) minmax(0,1.1fr);gap:40px;padding:32px 0;border-top:1px solid var(--line)}
-.stage:last-child{border-bottom:1px solid var(--line)}
-.stage h3{font-size:clamp(30px,4vw,48px);line-height:1}
-.stage p{margin:0;color:var(--soft)}
-.stage .rule{border-left:3px solid var(--accent);padding-left:18px;color:var(--ink)}
+.ai-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px}
+.ai-card{padding:24px;border:1px solid var(--line);border-radius:18px;background:rgba(10,14,26,.36)}
+.ai-card .meta{margin-bottom:18px;color:var(--accent);font:600 12px/1.2 var(--body);letter-spacing:.13em;text-transform:uppercase}
+.ai-card h3{font-size:clamp(23px,2.1vw,30px);line-height:1.05;letter-spacing:-.03em;margin-bottom:12px}
+.ai-card p{margin:0;color:var(--soft);font-size:16px;line-height:1.55}
+.ai-note{max-width:48em;margin:28px 0 0;padding-left:16px;border-left:3px solid var(--accent);color:var(--muted);font-size:16px}
 .contact{background:var(--accent);color:var(--accent-ink);border-radius:32px;padding:72px 48px}
 .contact h2{margin-bottom:20px}
 .contact p{max-width:32em;font-size:21px;margin:0 0 32px}
@@ -119,9 +120,10 @@ footer p{margin:0;text-align:center}
   .hero{padding-top:48px}section{padding:64px 0}
   .contact{padding:44px 26px}
   .strip{padding:24px}
+  .ai-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:700px){
-  .about-grid,.principle,.case,.stage{grid-template-columns:1fr;gap:16px}
+  .about-grid,.principle,.case{grid-template-columns:1fr;gap:16px}
   .photo{width:100%;max-width:360px;justify-self:center;order:-1}
 }
 @media (max-width:600px){
@@ -146,6 +148,11 @@ footer p{margin:0;text-align:center}
   .strip{margin-top:32px;padding:20px;border-radius:20px}
   .contact{padding:32px 22px;border-radius:24px}
   .contact p{font-size:18px;margin-bottom:24px}
+  .ai-grid{grid-template-columns:1fr;gap:12px;margin-top:28px}
+  .ai-card{padding:22px}
+  .ai-card .meta{margin-bottom:12px}
+  .ai-card h3{font-size:26px}
+  .ai-note{margin-top:22px}
   footer .foot{gap:20px;padding-top:32px;padding-bottom:32px}
   .flinks{gap:20px;flex-wrap:wrap}
 }
@@ -228,16 +235,41 @@ footer p{margin:0;text-align:center}
 </div></section>
 
 <section id="ai" class="ai"><div class="wrap">
-  <h2>AI in practice.</h2>
-  <p class="lede">A small prototype can make an abstract product idea tangible enough to evaluate.</p>
-  <article class="case">
-    <div><div class="meta">AI prototype · Built with Cursor</div><h3>Turning listing details into a video</h3></div>
-    <dl>
-      <dt>The problem</dt><dd>Rich listing content can help buyers engage, but producing it takes time that teams may not have.</dd>
-      <dt>The prototype</dt><dd>I built a prototype that generates listing videos from a few inputs, exploring how AI could make richer content easier to create.</dd>
-      <dt>What I learned</dt><dd>A quick prototype gives a team something concrete to evaluate. It helps test an assumption, but it isn’t proof of user impact.</dd>
-    </dl>
-  </article>
+  <h2>Where AI helps me as a PM.</h2>
+  <p class="lede">I use AI to move faster from evidence to action.</p>
+  <div class="ai-grid">
+    <article class="ai-card">
+      <div class="meta">01 · Product analytics</div>
+      <h3>Explore the numbers</h3>
+      <p>Spot funnel drop-offs, trends, and anomalies.</p>
+    </article>
+    <article class="ai-card">
+      <div class="meta">02 · User feedback</div>
+      <h3>Find recurring themes</h3>
+      <p>Summarise interviews, reviews, and support feedback into clear themes.</p>
+    </article>
+    <article class="ai-card">
+      <div class="meta">03 · Measurement</div>
+      <h3>Plan event tracking</h3>
+      <p>Plan and QA events in Firebase and Google Analytics.</p>
+    </article>
+    <article class="ai-card">
+      <div class="meta">04 · Discovery</div>
+      <h3>Sharpen the questions</h3>
+      <p>Explore markets, competitors, and research questions.</p>
+    </article>
+    <article class="ai-card">
+      <div class="meta">05 · Product writing</div>
+      <h3>Make decisions clear</h3>
+      <p>Draft briefs, user stories, and acceptance criteria.</p>
+    </article>
+    <article class="ai-card">
+      <div class="meta">06 · Prototyping</div>
+      <h3>Make an idea tangible</h3>
+      <p>Prototype workflows quickly, from listing videos to user flows.</p>
+    </article>
+  </div>
+  <p class="ai-note">AI helps with the first pass; I check its work.</p>
 </div></section>
 
 <section id="contact"><div class="wrap">
